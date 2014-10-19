@@ -2,6 +2,8 @@ from numpy import linspace
 from Adafruit_Raspberry_Pi_Python_Code.Adafruit_PWM_Servo_Driver.Adafruit_PWM_Servo_Driver import PWM
 import time
 
+
+
 #Legs Definition, (a,b,c) a=topservo pin b= bottom servo pin c = orientation
 #leg = {"FR":(,),"FL":(,),"BR":(,),"BL":(,)}
 servoMin = 250
