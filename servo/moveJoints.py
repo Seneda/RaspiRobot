@@ -15,15 +15,18 @@ def limit(pos):
             pos = servoMax
     return pos
 
+
 def stepsList(startpos, endpos, t):
-	if startpos < endpos:
-		floatsteps = linspace(startpos, endpos, t*30)
-	elif startpos > endpos:
-		floatsteps = linspace(startpos, endpos, t*30)
-	intsteps = []
-	for i in floatsteps:
-		intsteps.append(int(i))
-	return intsteps
+    if startpos < endpos:
+        floatsteps = linspace(startpos, endpos, t*30)
+    elif startpos > endpos:
+        floatsteps = linspace(startpos, endpos, t*30)
+    else:
+        floatsteps = [startpos]
+    intsteps = []
+    for i in floatsteps:
+        intsteps.append(int(i))
+    return intsteps
 
 def moveJoint(joint, startpos, endpos, t=5):
 	startpos = limit(startpos)
