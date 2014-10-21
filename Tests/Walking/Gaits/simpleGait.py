@@ -5,6 +5,10 @@ def centre():
     moveJoint(5, 400, 400, 1)
     moveJoint(8, 400, 400, 1)
     moveJoint(9, 400, 400, 1)
+    moveJoint(6, 400, 400, 1)
+    moveJoint(7, 400, 400, 1)
+    moveJoint(10, 400, 400, 1)
+    moveJoint(11, 400, 400, 1)
 
 centre()
 #while True:
