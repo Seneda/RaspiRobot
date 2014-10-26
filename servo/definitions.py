@@ -48,16 +48,18 @@ class Robot(object):
 
     def simpleStep(self):
         for l in self.legs.values():
-            l.hip.move(0.5,0.5,0.01)
-            l.knee.move(0.3,0.3,0.01)
+            l.hip.move(0.5,0.5,0.1)
+            l.knee.move(0.3,0.3,0.1)
+        time.sleep(5)
+
+        for l in [self.legs['FR'],self.legs['BL']]:
+            l.hip.move(0.5,0.8,0.1)
+            l.knee.move(0.3,0.8,0.1)
+
         time.sleep(5)
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.knee.move(0.3,0.8,0.01)
-            l.hip.move(0.5,0.8,0.01)
-        time.sleep(5)
-        for l in [self.legs['FR'],self.legs['BL']]:
-            l.knee.move(0.8,0.3,0.01)
-            l.hip.move(0.8,0.5,0.01)
+            l.knee.move(0.8,0.3,0.1)
+            l.hip.move(0.8,0.5,0.1)
 
 
 
