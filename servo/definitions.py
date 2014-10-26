@@ -1,7 +1,7 @@
 __author__ = 'seneda'
 from servo.moveJoints import moveJoint, stop
 
-class joint():
+class joint(object):
     def __init__(self, pin, max, min):
         self.pin = pin
         self.max = max
@@ -23,7 +23,7 @@ class kneeJoint(joint):
         super(hipJoint,self).__init__(pin, outmax, undermax)
 
 
-class leg():
+class leg(object):
     def __init__(self,hip,knee):
         self.hip = hip
         self.knee = knee
