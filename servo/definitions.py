@@ -49,7 +49,7 @@ class Robot(object):
     def simpleStep(self):
         for l in self.legs.values():
             l.hip.move(0.5,0.5,0.01)
-            l.knee.ove(0.3,0.3,0.01)
+            l.knee.move(0.3,0.3,0.01)
         for l in [self.legs['FR'],self.legs['BL']]:
             l.knee.move(0.3,0.8,0.01)
             l.hip.move(0.5,0.8,0.01)
