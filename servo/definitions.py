@@ -43,7 +43,7 @@ class Robot(object):
 
     def stand(self):
         for l in self.legs.values():
-            l.knee.move()
+            l.knee.move(0.25,0.8)
 
 
 robot = Robot(legs)
