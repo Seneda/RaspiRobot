@@ -60,6 +60,7 @@ class Robot(object):
 
 
 
+
     def stop(self):
         for l in self.legs.values():
             l.knee.stop()
