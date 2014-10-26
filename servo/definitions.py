@@ -67,7 +67,6 @@ class Robot(object):
             l.hip.stop()
 
 
-    def step(self):
 
 
 robot = Robot(legs)
