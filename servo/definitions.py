@@ -41,9 +41,9 @@ class Robot(object):
     def __init__(self, legs):
         self.legs = legs
 
-    def stand(self,start=0.8,stop=0.2):
+    def stand(self,start=0.8,stop=0.2, time = 0.1):
         for l in self.legs.values():
-            l.knee.move(start,stop)
+            l.knee.move(start,stop,time)
 
 
 robot = Robot(legs)
