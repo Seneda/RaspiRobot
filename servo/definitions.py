@@ -1,5 +1,6 @@
 __author__ = 'seneda'
 from servo.moveJoints import moveJoint, stop
+import time
 
 class Joint(object):
     def __init__(self, pin, max, min):
@@ -44,6 +45,28 @@ class Robot(object):
     def stand(self,start=0.8,stop=0.2, time = 0.1):
         for l in self.legs.values():
             l.knee.move(start,stop,time)
+
+    def simpleStep(self):
+        for l in self.legs.values():
+            l.hip.move(0.5,0.5,0.01)
+            l.knee.ove(0.3,0.3,0.01)
+        for l in [self.legs['FR'],self.legs['BL']]:
+            l.knee.move(0.3,0.8,0.01)
+            l.hip.move(0.5,0.8,0.01)
+        time.sleep(1)
+        for l in [self.legs['FR'],self.legs['BL']]:
+            l.knee.move(0.8,0.3,0.01)
+            l.hip.move(0.8,0.5,0.01)
+
+
+
+    def stop(self):
+        for l in self.legs.values():
+            l.knee.stop()
+            l.hip.stop()
+
+
+    def step(self):
 
 
 robot = Robot(legs)
