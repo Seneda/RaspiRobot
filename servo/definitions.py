@@ -43,7 +43,7 @@ class Robot(object):
 
     def stand(self):
         for l in self.legs.values():
-            l.move()
+            l.knee.move()
 
 robot = Robot(legs)
 #Legs = [(leg(hipJoint(9,150,450),kneeJoint(11,225,500))),
