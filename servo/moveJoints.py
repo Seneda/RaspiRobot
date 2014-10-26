@@ -4,8 +4,8 @@ from Adafruit_Raspberry_Pi_Python_Code.Adafruit_PWM_Servo_Driver.Adafruit_PWM_Se
 
 #Legs Definition, (a,b,c) a=topservo pin b= bottom servo pin c = orientation
 #leg = {"FR":(,),"FL":(,),"BR":(,),"BL":(,)}
-servoMin = 300
-servoMax = 450
+servoMin = 150
+servoMax = 600
 pwm = PWM(0x40, debug=True)
 
 def limit(pos):
