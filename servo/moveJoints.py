@@ -28,6 +28,9 @@ def stepsList(startpos, endpos, t):
         intsteps.append(int(i))
     return intsteps
 
+def stop(i):
+    pwm.setPWM(i,0,0)
+
 def moveJoint(joint, startpos, endpos, t=5):
 	startpos = limit(startpos)
 	endpos = limit(endpos)
