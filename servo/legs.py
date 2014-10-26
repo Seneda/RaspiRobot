@@ -1,0 +1,2 @@
+class joint():
+    __init
