@@ -20,7 +20,7 @@ class HipJoint(Joint):
 
 class KneeJoint(Joint):
     def __init__(self, pin, outmax, undermax):
-        super(HipJoint,self).__init__(pin, outmax, undermax)
+        super(KneeJoint,self).__init__(pin, outmax, undermax)
 
 
 class Leg(object):
