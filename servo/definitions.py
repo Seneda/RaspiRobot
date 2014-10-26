@@ -16,11 +16,11 @@ class Joint(object):
 
 class HipJoint(Joint):
     def __init__(self, pin, frontmax, backmax):
-        super(HipJoint).__init__(pin, frontmax, backmax)
+        super(HipJoint,self).__init__(pin, frontmax, backmax)
 
 class KneeJoint(Joint):
     def __init__(self, pin, outmax, undermax):
-        super(HipJoint).__init__(pin, outmax, undermax)
+        super(HipJoint,self).__init__(pin, outmax, undermax)
 
 
 class Leg(object):
