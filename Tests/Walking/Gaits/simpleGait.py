@@ -15,6 +15,7 @@ try:
         moveJoint(5,600,300,1)
         moveJoint(8,600,300,1)
         moveJoint(9,600,300,1)
+
 except KeyboardInterrupt:
     for i in [4,5,6,7,8,9,10,11]:
         stop(i)
