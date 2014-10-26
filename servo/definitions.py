@@ -29,12 +29,26 @@ class Leg(object):
         self.knee = knee
 
 
-Legs = {'FR':(Leg(HipJoint(9,150,450),KneeJoint(11,225,500))),
+legs = {'FR':(Leg(HipJoint(9,150,450),KneeJoint(11,225,500))),
        'FL':Leg(HipJoint(8,600,300),KneeJoint(10,250,550)),
        'BR':Leg(HipJoint(5,200,550),KneeJoint(7,250,550)),
        'BL':Leg(HipJoint(4,500,200),KneeJoint(6,200,500)),
        }
 
+class Robot(object):
+    def __init__(self, legs):
+        self.legs.FR = legs['FR']
+        self.legs.FL = legs['FL']
+        self.legs.BR = legs['BR']
+        self.legs.BL = legs['BL']
+
+    def stand(self):
+        self.legs.FR.knee.move()
+        self.legs.FL.knee.move()
+        self.legs.BR.knee.move()
+        self.legs.BL.knee.move()
+
+robot = Robot(legs)
 #Legs = [(leg(hipJoint(9,150,450),kneeJoint(11,225,500))),
 #        leg(hipJoint(8,600,300),kneeJoint(10,250,550)),
 #        leg(hipJoint(5,200,550),kneeJoint(7,250,550)),
