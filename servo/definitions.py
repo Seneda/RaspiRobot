@@ -50,7 +50,7 @@ class Robot(object):
         for l in self.legs.values():
             l.hip.move(0.5,0.5,0.1)
             l.knee.move(0.3,0.3,0.1)
-        time.sleep(5)
+        time.sleep(0.5)
 
         for l in [self.legs['FR'],self.legs['BL']]:
             l.hip.move(0.5,0.8,0.1)
@@ -59,11 +59,27 @@ class Robot(object):
             l.hip.move(0.5,0.2,0.1)
 
 
-        time.sleep(5)
+        time.sleep(0.5)
         for l in [self.legs['FR'],self.legs['BL']]:
             l.knee.move(0.8,0.3,0.1)
             l.hip.move(0.8,0.5,0.1)
         for l in [self.legs['FL'],self.legs['BR']]:
+            l.hip.move(0.2,0.5,0.1)
+
+        time.sleep(0.5)
+
+        for l in [self.legs['FL'],self.legs['BR']]:
+            l.hip.move(0.5,0.8,0.1)
+            l.knee.move(0.3,0.8,0.1)
+        for l in [self.legs['FR'],self.legs['BL']]:
+            l.hip.move(0.5,0.2,0.1)
+
+
+        time.sleep(0.5)
+        for l in [self.legs['FL'],self.legs['BR']]:
+            l.knee.move(0.8,0.3,0.1)
+            l.hip.move(0.8,0.5,0.1)
+        for l in [self.legs['FR'],self.legs['BL']]:
             l.hip.move(0.2,0.5,0.1)
 
 
