@@ -45,6 +45,7 @@ class Robot(object):
         for l in self.legs.values():
             l.knee.move()
 
+
 robot = Robot(legs)
 #Legs = [(leg(hipJoint(9,150,450),kneeJoint(11,225,500))),
 #        leg(hipJoint(8,600,300),kneeJoint(10,250,550)),
