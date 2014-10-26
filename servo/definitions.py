@@ -29,8 +29,14 @@ class leg():
         self.knee = knee
 
 
-Legs = {'FR':(leg(hipJoint(9,150,450),kneeJoint(11,225,500))),
-        'FL':leg(hipJoint(8,600,300),kneeJoint(10,250,550)),
-        'BR':leg(hipJoint(5,200,550),kneeJoint(7,250,550)),
-        'BL':leg(hipJoint(4,500,200),kneeJoint(6,200,500)),
-        }
+#Legs = {'FR':(leg(hipJoint(9,150,450),kneeJoint(11,225,500))),
+#        'FL':leg(hipJoint(8,600,300),kneeJoint(10,250,550)),
+#        'BR':leg(hipJoint(5,200,550),kneeJoint(7,250,550)),
+#        'BL':leg(hipJoint(4,500,200),kneeJoint(6,200,500)),
+#        }
+
+Legs = [(leg(hipJoint(9,150,450),kneeJoint(11,225,500))),
+        leg(hipJoint(8,600,300),kneeJoint(10,250,550)),
+        leg(hipJoint(5,200,550),kneeJoint(7,250,550)),
+        leg(hipJoint(4,500,200),kneeJoint(6,200,500)),
+        ]
