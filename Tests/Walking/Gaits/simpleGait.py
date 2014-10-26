@@ -1,17 +1,11 @@
 from servo.moveJoints import moveJoint
 
-def centre():
-    moveJoint(4, 400, 400, 2)
-    moveJoint(5, 400, 400, 2)
-    moveJoint(8, 300, 300, 2)
-    moveJoint(9, 450, 450, 2)
-    moveJoint(10, 400, 400, 2)
-    moveJoint(11, 400, 400, 2)
-    moveJoint(6, 400, 400, 2)
-    moveJoint(7, 400, 400, 2)
+def centre(i):
+    moveJoint(i, 300, 400, 2)
 
 
-centre()
+
+#centre()
 #while True:
 #	try:	#
 #		moveJoint(4,300,600,1)
