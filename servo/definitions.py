@@ -42,9 +42,21 @@ class Robot(object):
     def __init__(self, legs):
         self.legs = legs
 
+
+
     def stand(self,start=0.8,stop=0.2, time = 0.1):
         for l in self.legs.values():
             l.knee.move(start,stop,time)
+
+    def sit(self):
+        for l in [self.legs['BR'],self.legs['BL']]:
+            l.hip.move(0.5,0.8,0.1)
+            l.knee.move(0.5,0.8,0.1)
+
+    def unsit(self):
+        for l in [self.legs['BR'],self.legs['BL']]:
+            l.hip.move(0.8,0.5,0.1)
+            l.knee.move(0.8,0.5,0.1)
 
     def simpleStep(self):
         for l in self.legs.values():
