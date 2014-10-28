@@ -44,8 +44,9 @@ class Robot(object):
 
 
 
-    def stand(self,start=0.8,stop=0.2, time = 0.1):
+    def stand(self,start=0.8,stop=0.5, time = 0.1):
         for l in self.legs.values():
+            l.knee.move(start,stop,time)
             l.knee.move(start,stop,time)
 
     def sit(self):
@@ -58,40 +59,40 @@ class Robot(object):
             l.hip.move(0.8,0.5,0.1)
             l.knee.move(0.8,0.5,0.1)
 
-    def simpleStep(self):
+    def simpleStep(self,time=0.1):
         for l in self.legs.values():
-            l.hip.move(0.5,0.5,0.1)
-            l.knee.move(0.3,0.3,0.1)
+            l.hip.move(0.5,0.5,time)
+            l.knee.move(0.3,0.3,time)
         time.sleep(0.5)
 
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.5,0.8,0.1)
-            l.knee.move(0.3,0.8,0.1)
+            l.hip.move(0.5,0.8,time)
+            l.knee.move(start,stop,time)l.knee.move(0.3,0.8,time)
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.5,0.2,0.1)
+            l.hip.move(0.5,0.2,time)
 
 
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.knee.move(0.8,0.3,0.1)
-            l.hip.move(0.8,0.2,0.1)
+            l.knee.move(0.8,0.3,time)
+            l.hip.move(0.8,0.2,time)
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.2,0.8,0.1)
+            l.hip.move(0.2,0.8,time)
 
         time.sleep(0.5)
 
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.2,0.8,0.1)
-            l.knee.move(0.3,0.8,0.1)
+            l.hip.move(0.2,0.8,time)
+            l.knee.move(0.3,0.8,time)
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.8,0.2,0.1)
+            l.hip.move(0.8,0.2,time)
 
 
 
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.8,0.5,0.1)
-            l.knee.move(0.8,0.3,0.1)
+            l.hip.move(0.8,0.5,time)
+            l.knee.move(0.8,0.3,time)
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.2,0.5,0.1)
+            l.hip.move(0.2,0.5,time)
 
 
 
