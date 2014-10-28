@@ -7,10 +7,14 @@ class Joint(object):
         self.pin = pin
         self.max = max
         self.min = min
+        self.pos = 0.5
 
-    def move(self,start=0.25,end=0.75,time=1):
+
+    def move(self,end=0.75,time=1):
         diff = self.max-self.min
+        start = self.pos
         moveJoint(self.pin,self.min+start*diff,self.min+end*diff,time)
+        self.pos = end
 
     def stop(self):
         stop(self.pin)
@@ -18,6 +22,7 @@ class Joint(object):
 class HipJoint(Joint):
     def __init__(self, pin, frontmax, backmax):
         super(HipJoint,self).__init__(pin, frontmax, backmax)
+
 
 class KneeJoint(Joint):
     def __init__(self, pin, outmax, undermax):
@@ -42,57 +47,55 @@ class Robot(object):
     def __init__(self, legs):
         self.legs = legs
 
-
-
-    def stand(self,start=0.8,stop=0.5, time = 0.1):
+    def stand(self,stop=0.5, time = 0.1):
         for l in self.legs.values():
-            l.knee.move(start,stop,time)
-            l.knee.move(start,stop,time)
+            l.knee.move(stop,time)
+            l.knee.move(stop,time)
 
     def sit(self):
         for l in [self.legs['BR'],self.legs['BL']]:
-            l.hip.move(0.5,0.8,0.1)
-            l.knee.move(0.5,0.8,0.1)
+            l.hip.move(0.8,0.1)
+            l.knee.move(0.8,0.1)
 
     def unsit(self):
         for l in [self.legs['BR'],self.legs['BL']]:
-            l.hip.move(0.8,0.5,0.1)
-            l.knee.move(0.8,0.5,0.1)
+            l.hip.move(0.5,0.1)
+            l.knee.move(0.5,0.1)
 
     def simpleStep(self,t=0.1):
         for l in self.legs.values():
-            l.hip.move(0.5,0.5,t)
-            l.knee.move(0.3,0.3,t)
+            l.hip.move(0.5,t)
+            l.knee.move(0.3,t)
         time.sleep(0.5)
 
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.5,0.8,t)
-            l.knee.move(0.3,0.8,t)
+            l.hip.move(0.8,t)
+            l.knee.move(0.8,t)
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.5,0.2,t)
+            l.hip.move(0.2,t)
 
 
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.knee.move(0.8,0.3,t)
-            l.hip.move(0.8,0.2,t)
+            l.knee.move(0.3,t)
+            l.hip.move(0.2,t)
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.2,0.8,t)
+            l.hip.move(0.8,t)
 
         time.sleep(0.5)
 
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.2,0.8,t)
-            l.knee.move(0.3,0.8,t)
+            l.hip.move(0.8,t)
+            l.knee.move(0.8,t)
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.8,0.2,t)
+            l.hip.move(0.2,t)
 
 
 
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.8,0.5,t)
-            l.knee.move(0.8,0.3,t)
+            l.hip.move(0.5,t)
+            l.knee.move(0.3,t)
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.2,0.5,t)
+            l.hip.move(0.5,t)
 
 
 
