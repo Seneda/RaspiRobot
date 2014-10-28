@@ -97,6 +97,32 @@ class Robot(object):
         for l in [self.legs['FR'],self.legs['BL']]:
             l.hip.move(0.5,t)
 
+    def simpleCreep(self,t=0.1,k0=0.25,h0=0.5,height=0.3,reach=0.3):
+#1
+        self.legs['FR'].knee(k0+height,t)
+
+#2
+        self.legs['FR'].hip(h0+reach,t)
+        self.legs['FL'].hip(h0-reach,t)
+        self.legs['BR'].hip(h0-reach,t)
+        self.legs['BL'].hip(h0-reach,t)
+#3
+        self.legs['FR'].knee(k0,t)
+
+#4
+        self.legs['FL'].knee(k0+height,t)
+        self.legs['FL'].hip(h0+reach,t)
+        self.legs['FL'].knee(k0-height,t)
+#5
+        self.legs['BL'].knee(k0+height,t)
+        self.legs['BL'].hip(h0+reach,t)
+        self.legs['BL'].knee(k0-height,t)
+
+        self.legs['FR'].hip(h0+reach,t)
+        self.legs['FL'].hip(h0+reach,t)
+        self.legs['BR'].hip(h0+reach,t)
+        self.legs['BL'].hip(h0+reach,t)
+
 
 
     def stop(self):
