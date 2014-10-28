@@ -132,6 +132,9 @@ class Robot(object):
         self.legs['BR'].knee.move(k0+height,t)
         self.legs['BR'].hip.move(h0+reach,t)
         self.legs['BR'].knee.move(k0,t)
+
+        time.sleep(pause)
+
         steps = 8.0
         for i in range(int(steps)):
             self.legs['FR'].hip.move(h0+reach-i*reach/4.0,t/steps)
@@ -139,7 +142,7 @@ class Robot(object):
             self.legs['BR'].hip.move(h0+reach-i*reach/4.0,t/steps)
             self.legs['BL'].hip.move(h0+reach-i*reach/4.0,t/steps)
 
-
+        time.sleep(pause)
 
     def stop(self):
         for l in self.legs.values():
