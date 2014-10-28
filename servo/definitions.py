@@ -99,29 +99,29 @@ class Robot(object):
 
     def simpleCreep(self,t=0.1,k0=0.25,h0=0.5,height=0.3,reach=0.3):
 #1
-        self.legs['FR'].knee(k0+height,t)
+        self.legs['FR'].knee.move(k0+height,t)
 
 #2
-        self.legs['FR'].hip(h0+reach,t)
-        self.legs['FL'].hip(h0-reach,t)
-        self.legs['BR'].hip(h0-reach,t)
-        self.legs['BL'].hip(h0-reach,t)
+        self.legs['FR'].hip.move(h0+reach,t)
+        self.legs['FL'].hip.move(h0-reach,t)
+        self.legs['BR'].hip.move(h0-reach,t)
+        self.legs['BL'].hip.move(h0-reach,t)
 #3
-        self.legs['FR'].knee(k0,t)
+        self.legs['FR'].knee.move(k0,t)
 
 #4
-        self.legs['FL'].knee(k0+height,t)
-        self.legs['FL'].hip(h0+reach,t)
-        self.legs['FL'].knee(k0-height,t)
+        self.legs['FL'].knee.move(k0+height,t)
+        self.legs['FL'].hip.move(h0+reach,t)
+        self.legs['FL'].knee.move(k0-height,t)
 #5
-        self.legs['BL'].knee(k0+height,t)
-        self.legs['BL'].hip(h0+reach,t)
-        self.legs['BL'].knee(k0-height,t)
+        self.legs['BL'].knee.move(k0+height,t)
+        self.legs['BL'].hip.move(h0+reach,t)
+        self.legs['BL'].knee.move(k0-height,t)
 
-        self.legs['FR'].hip(h0+reach,t)
-        self.legs['FL'].hip(h0+reach,t)
-        self.legs['BR'].hip(h0+reach,t)
-        self.legs['BL'].hip(h0+reach,t)
+        self.legs['FR'].hip.move(h0+reach,t)
+        self.legs['FL'].hip.move(h0+reach,t)
+        self.legs['BR'].hip.move(h0+reach,t)
+        self.legs['BL'].hip.move(h0+reach,t)
 
 
 
