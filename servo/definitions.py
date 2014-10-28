@@ -52,6 +52,11 @@ class Robot(object):
             l.knee.move(stop,time)
             l.knee.move(stop,time)
 
+    def centre(self,k0,h0,t=0.1):
+        for l in self.legs.values():
+            l.hip.move(h0,t)
+            l.knee.move(k0,t)
+
     def sit(self):
         for l in [self.legs['BR'],self.legs['BL']]:
             l.hip.move(0.8,0.1)
