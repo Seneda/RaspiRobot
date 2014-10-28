@@ -123,6 +123,10 @@ class Robot(object):
         self.legs['BL'].hip.move(h0+reach,t)
         self.legs['BL'].knee.move(k0,t)
 
+        self.legs['BR'].knee.move(k0+height,t)
+        self.legs['BR'].hip.move(h0+reach,t)
+        self.legs['BR'].knee.move(k0,t)
+
         self.legs['FR'].hip.move(h0-reach,t)
         self.legs['FL'].hip.move(h0-reach,t)
         self.legs['BR'].hip.move(h0-reach,t)
