@@ -105,6 +105,13 @@ class Robot(object):
             l.hip.stop()
 
 
+    def drag(self,steps=1):
+        for i in range(steps)
+            self.sit()
+            time.sleep(1)
+            self.unsit()
+            self.stand(stop=0.25)
+
 
 
 robot = Robot(legs)
