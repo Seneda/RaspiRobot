@@ -106,7 +106,7 @@ class Robot(object):
 
 
     def drag(self,steps=1):
-        for i in range(steps)
+        for i in range(steps):
             self.sit()
             time.sleep(1)
             self.unsit()
