@@ -127,11 +127,11 @@ class Robot(object):
         self.legs['BR'].hip.move(h0+reach,t)
         self.legs['BR'].knee.move(k0,t)
 
-        for i in range(5):
-            self.legs['FR'].hip.move(h0-i*reach,t)
-            self.legs['FL'].hip.move(h0-i*reach,t)
-            self.legs['BR'].hip.move(h0-i*reach,t)
-            self.legs['BL'].hip.move(h0-i*reach,t)
+        for i in range(8):
+            self.legs['FR'].hip.move(h0+reach-i*reach/4.0,t)
+            self.legs['FL'].hip.move(h0+reach-i*reach/4.0,t)
+            self.legs['BR'].hip.move(h0+reach-i*reach/4.0,t)
+            self.legs['BL'].hip.move(h0+reach-i*reach/4.0,t)
 
 
 
