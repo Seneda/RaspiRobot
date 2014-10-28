@@ -112,11 +112,11 @@ class Robot(object):
 #4
         self.legs['FL'].knee.move(k0+height,t)
         self.legs['FL'].hip.move(h0+reach,t)
-        self.legs['FL'].knee.move(k0-height,t)
+        self.legs['FL'].knee.move(k0,t)
 #5
         self.legs['BL'].knee.move(k0+height,t)
         self.legs['BL'].hip.move(h0+reach,t)
-        self.legs['BL'].knee.move(k0-height,t)
+        self.legs['BL'].knee.move(k0,t)
 
         self.legs['FR'].hip.move(h0+reach,t)
         self.legs['FL'].hip.move(h0+reach,t)
