@@ -116,7 +116,7 @@ class Robot(object):
 #3
         time.sleep(pause)
         self.legs['FR'].knee.move(k0,t)
-         time.sleep(pause)
+        time.sleep(pause)
 #4
         self.legs['FL'].knee.move(k0+height,t)
         self.legs['FL'].hip.move(h0+reach,t)
