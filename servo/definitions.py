@@ -59,41 +59,41 @@ class Robot(object):
             l.hip.move(0.8,0.5,0.1)
             l.knee.move(0.8,0.5,0.1)
 
-    def simpleStep(self,time=0.1):
+    def simpleStep(self,t=0.1):
         for l in self.legs.values():
-            l.hip.move(0.5,0.5,time)
-            l.knee.move(0.3,0.3,time)
+            l.hip.move(0.5,0.5,t)
+            l.knee.move(0.3,0.3,t)
         time.sleep(0.5)
 
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.5,0.8,time)
-            l.knee.move(start,stop,time)
-            l.knee.move(0.3,0.8,time)
+            l.hip.move(0.5,0.8,t)
+            l.knee.move(start,stop,t)
+            l.knee.move(0.3,0.8,t)
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.5,0.2,time)
+            l.hip.move(0.5,0.2,t)
 
 
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.knee.move(0.8,0.3,time)
-            l.hip.move(0.8,0.2,time)
+            l.knee.move(0.8,0.3,t)
+            l.hip.move(0.8,0.2,t)
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.2,0.8,time)
+            l.hip.move(0.2,0.8,t)
 
         time.sleep(0.5)
 
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.2,0.8,time)
-            l.knee.move(0.3,0.8,time)
+            l.hip.move(0.2,0.8,t)
+            l.knee.move(0.3,0.8,t)
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.8,0.2,time)
+            l.hip.move(0.8,0.2,t)
 
 
 
         for l in [self.legs['FL'],self.legs['BR']]:
-            l.hip.move(0.8,0.5,time)
-            l.knee.move(0.8,0.3,time)
+            l.hip.move(0.8,0.5,t)
+            l.knee.move(0.8,0.3,t)
         for l in [self.legs['FR'],self.legs['BL']]:
-            l.hip.move(0.2,0.5,time)
+            l.hip.move(0.2,0.5,t)
 
 
 
