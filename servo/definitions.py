@@ -67,7 +67,6 @@ class Robot(object):
 
         for l in [self.legs['FR'],self.legs['BL']]:
             l.hip.move(0.5,0.8,t)
-            l.knee.move(start,stop,t)
             l.knee.move(0.3,0.8,t)
         for l in [self.legs['FL'],self.legs['BR']]:
             l.hip.move(0.5,0.2,t)
