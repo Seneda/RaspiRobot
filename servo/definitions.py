@@ -62,6 +62,11 @@ class Robot(object):
             l.hip.move(0.8,0.1)
             l.knee.move(0.8,0.1)
 
+    def test(self,pos=0.8):
+        l = self.legs['BR']
+        l.hip.move(pos,0.1)
+
+
     def unsit(self):
         for l in [self.legs['BR'],self.legs['BL']]:
             l.hip.move(0.5,0.1)
