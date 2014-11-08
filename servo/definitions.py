@@ -62,8 +62,8 @@ class Robot(object):
             l.hip.move(0.8,0.1)
             l.knee.move(0.8,0.1)
 
-    def test(self,pos=0.8):
-        l = self.legs['BR']
+    def test(self,joint='BR',pos=0.8):
+        l = self.legs[joint]
         l.hip.move(pos,0.1)
 
 
